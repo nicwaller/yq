@@ -1,0 +1,5 @@
+.DS_Store
+devenv
+build
+yq.egg-info
+dist
