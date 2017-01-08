@@ -16,9 +16,6 @@ setup(
     install_requires=[
         'pyyaml'
     ],
-    # scripts=[
-        # 'scripts/yq',
-    # ],
     entry_points={
         "console_scripts": [
             "yq=yq.yq:main",

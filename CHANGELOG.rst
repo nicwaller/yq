@@ -1,3 +1,8 @@
+0.1.3
+=====
+
+Add version tags in git
+
 0.1.2
 =====
 
