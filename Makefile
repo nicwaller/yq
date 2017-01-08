@@ -1,13 +1,16 @@
 .PHONY: default
 default: dist
 
-dist: setup.py
+test: $(wildcard **/*.py)
+	find yq -name '*.py' -exec python -m py_compile {} \;
+
+dist: test setup.py
 	# sdist means "source distribution"
 	python setup.py sdist
-	rm -r nicwaller.yq.egg-info
+	# rm -r nicwaller.yq.egg-info
 
 clean:
-	rm -rf dist
+	rm -rf dist nicwaller.yq.egg-info
 
 install: dist
 	# python2 setup.py install # setuptools bad. no way to uninstall
@@ -23,3 +26,4 @@ devenv:
 
 upload: devenv dist
 	devenv/bin/twine upload dist/*.tar.gz
+
